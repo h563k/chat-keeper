@@ -2,9 +2,9 @@
 
 > **摘要：** ChatKeeper 提供 1:1 还原 Claude 官网体验的网页镜像，以及 Claude / Gemini / OpenAI 等主流大模型的标准 API 套餐。国内直连、无需翻墙、注册即用、按需付费。
 
-**🌐 注册 / 个人中心（主入口）：** <https://www.chat-keeper.com>
+**🌐 注册 / 个人中心（唯一入口）：** <https://www.chat-keeper.com>
 
-**💬 Claude 网页（镜像站直连）：** <https://claude.chat-keeper.com>
+> 登录后在个人中心点「开始聊天」即可进入 Claude 网页端，无需另记地址。
 
 ![ChatKeeper 界面预览](assets/hero.png)
 
@@ -62,9 +62,8 @@ Web 端直接使用，体验与 Claude 官网一致：
 ## 🚀 快速开始
 
 1. 打开 <https://www.chat-keeper.com> 注册账号
-2. 进入个人中心，购买 / 兑换套餐额度
-3. 打开 <https://claude.chat-keeper.com>，登录后即可开始对话
-4. 开发者用户在个人中心创建 API Key，接入自有应用
+2. 在个人中心购买 / 兑换套餐额度
+3. 点「开始聊天」直接进入 Claude 网页端；开发者同时在个人中心创建 API Key
 
 ---
 
