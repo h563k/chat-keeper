@@ -22,251 +22,351 @@
   <meta name="twitter:image" content="https://pages.chat-keeper.com/assets/og.jpg" />
   <link rel="canonical" href="https://pages.chat-keeper.com/" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- 自托管字体（latin 子集），避免国内访问 Google Fonts 不稳定 -->
+  <link rel="preload" href="assets/fonts/outfit-latin-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- 导航 -->
-  <header class="nav">
+  <header class="nav" id="nav">
     <div class="container nav-inner">
-      <a class="brand" href="#">
-        <img src="assets/logo.svg" alt="ChatKeeper Logo" class="brand-logo" />
-        <span>ChatKeeper</span>
+      <a class="logo" href="#">
+        <span class="logo-text">chat-keeper</span>
+        <span class="logo-sub">— Claude 镜像与 API</span>
       </a>
-      <nav class="nav-links">
-        <a href="#features">核心能力</a>
-        <a href="#plans">套餐</a>
-        <a href="#start">快速开始</a>
-        <a href="#faq">常见问题</a>
-      </nav>
-      <a class="btn btn-primary btn-sm" href="https://www.chat-keeper.com" target="_blank" rel="noopener">立即体验</a>
+
+      <ul class="nav-links">
+        <li><a href="#plans" class="nav-link">套餐</a></li>
+        <li><a href="#preview" class="nav-link">能力展示</a></li>
+        <li><a href="#features" class="nav-link">核心能力</a></li>
+        <li><a href="#start" class="nav-link">快速开始</a></li>
+        <li><a href="#faq" class="nav-link">常见问题</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn-primary btn-sm" href="https://www.chat-keeper.com" target="_blank" rel="noopener">立即体验</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#plans" class="mobile-link">套餐</a>
+      <a href="#preview" class="mobile-link">能力展示</a>
+      <a href="#features" class="mobile-link">核心能力</a>
+      <a href="#start" class="mobile-link">快速开始</a>
+      <a href="#faq" class="mobile-link">常见问题</a>
+      <div class="mobile-actions">
+        <a class="btn btn-primary" href="https://www.chat-keeper.com" target="_blank" rel="noopener">立即体验</a>
+      </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <span class="badge">🚀 国内直连 · 注册即用 · 持续同步官方更新</span>
-      <h1 class="hero-title">
-        1:1 还原 <span class="accent">Claude 官网体验</span><br />
-        国内直连，无需翻墙
-      </h1>
-      <p class="hero-sub">
-        ChatKeeper 提供 <strong>Claude 网页镜像</strong> 与 <strong>主流大模型 API 套餐</strong>。
-        一个账号，畅享 Claude 全系模型，按需付费，无 5 小时额度限制。
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="https://www.chat-keeper.com" target="_blank" rel="noopener">立即注册体验</a>
-        <a class="btn btn-ghost btn-lg" href="#plans">查看套餐 →</a>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <span class="hero-eyebrow">1:1 还原 · 国内直连 · 注册即用</span>
+        <h1 class="hero-title">
+          还原 <span class="hero-title-accent">Claude 官网体验</span><br class="hero-br" />
+          国内直连，无需翻墙
+        </h1>
+        <p class="hero-subtitle">
+          ChatKeeper 提供 <strong>Claude 网页镜像</strong> 与 <strong>主流大模型 API 套餐</strong>。
+          一个账号，畅享 Claude 全系模型，按需付费，无 5 小时额度限制。
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="https://www.chat-keeper.com" target="_blank" rel="noopener">立即注册体验</a>
+          <a class="btn btn-outline btn-lg" href="#plans">查看套餐</a>
+          <a class="btn btn-outline btn-lg" href="#faq">常见问题</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">全系</span><span class="stat-label">Claude 模型</span></div>
+          <span class="stat-divider"></span>
+          <div class="stat"><span class="stat-num">99.9%</span><span class="stat-label">服务可用性</span></div>
+          <span class="stat-divider"></span>
+          <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">在线服务</span></div>
+          <span class="stat-divider"></span>
+          <div class="stat"><span class="stat-num">0</span><span class="stat-label">科学上网需求</span></div>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">全系</span><span class="stat-label">Claude 模型</span></div>
-        <div class="stat"><span class="stat-num">99.9%</span><span class="stat-label">服务可用性</span></div>
-        <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">在线服务</span></div>
-        <div class="stat"><span class="stat-num">0</span><span class="stat-label">科学上网需求</span></div>
-      </div>
-      <!-- 产品截图（待替换为真实截图） -->
-      <div class="hero-shot">
-        <img src="assets/hero.png" alt="ChatKeeper 网页界面预览" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 核心能力 -->
-  <section class="section" id="features">
-    <div class="container">
-      <div class="section-head">
-        <span class="tag">核心能力</span>
-        <h2>为稳定、顺手、天天用而设计</h2>
-        <p>无论你是内容创作者、开发者还是企业团队，都能开箱即用。</p>
-      </div>
-      <div class="grid grid-4">
-        <div class="card">
-          <div class="card-icon">🪞</div>
-          <h3>1:1 网页体验</h3>
-          <p>与 Claude 官网一致的界面与使用习惯，上手零成本。</p>
+    <!-- 套餐 -->
+    <section class="section" id="plans">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">套餐介绍</span>
+          <h2>两大服务，按需选择</h2>
+          <p>既可以直接使用 Claude 镜像站点，也可以用 API Key 接入大模型接口。</p>
         </div>
-        <div class="card">
-          <div class="card-icon">🌍</div>
-          <h3>国内直连</h3>
-          <p>无需科学上网，浏览器直接打开，稳定低延迟。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⏱️</div>
-          <h3>额度制计费</h3>
-          <p>按额度使用，不受官方订阅 5 小时窗口限制。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🤖</div>
-          <h3>全系模型</h3>
-          <p>覆盖 Claude Opus / Sonnet / Haiku，持续同步最新版本。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔌</div>
-          <h3>标准 API</h3>
-          <p>OpenAI 兼容接口，快速对接自有应用与工作流。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🖼️</div>
-          <h3>Chat + Image</h3>
-          <p>对话与图像生成/编辑接口齐备，独立计费更清晰。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔒</div>
-          <h3>隐私保障</h3>
-          <p>对话内容不用于训练，端到端加密传输。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🛎️</div>
-          <h3>长期运营</h3>
-          <p>99.9% 可用性目标，7×24 小时稳定在线。</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 能力展示 -->
-  <section class="section section-alt" id="preview">
-    <div class="container">
-      <div class="section-head">
-        <span class="tag">能力展示</span>
-        <h2>不只是聊天，还能真的把活干完</h2>
-        <p>背后是 Claude Code 级的 Agent 能力：拆任务、调工具、写文件、跑测试，全程可视化。</p>
-      </div>
-      <div class="hero-shot">
-        <img src="assets/agent.png" alt="Claude Code 级 Agent 能力展示" />
-      </div>
-    </div>
-  </section>
-
-  <!-- 套餐 -->
-  <section class="section section-alt" id="plans">
-    <div class="container">
-      <div class="section-head">
-        <span class="tag">套餐介绍</span>
-        <h2>两大服务，按需选择</h2>
-        <p>既可以直接使用 Claude 镜像站点，也可以用 API Key 接入大模型接口。</p>
-      </div>
-      <div class="grid grid-2">
-        <div class="card plan">
-          <div class="plan-head">
-            <div class="plan-icon">🪞</div>
-            <div>
+        <div class="plans-preview-grid">
+          <div class="plan-preview card">
+            <div class="plan-preview-head">
+              <div class="plan-preview-icon">🪞</div>
               <span class="tag tag-cyan">面向用户</span>
-              <h3>Claude 镜像套餐</h3>
             </div>
+            <h3>Claude 镜像服务</h3>
+            <p>Web 端直接对话，界面与使用习惯同 Claude 官网一致，登录账号即可使用。</p>
+            <ul class="plan-preview-points">
+              <li>Web 端直接对话，体验与 Claude 官网一致</li>
+              <li>覆盖 Claude 全系模型（Opus / Sonnet / Haiku）</li>
+              <li>额度制，无 5 小时额度限制</li>
+              <li>登录账号即可使用，无需信用卡</li>
+            </ul>
+            <a class="plan-preview-link" href="https://www.chat-keeper.com" target="_blank" rel="noopener">了解镜像服务 →</a>
           </div>
-          <ul class="plan-list">
-            <li>Web 端直接对话，体验与 Claude 官网一致</li>
-            <li>覆盖 Claude 全系模型（Opus / Sonnet / Haiku）</li>
-            <li>额度制，无 5 小时额度限制</li>
-            <li>登录账号即可使用，无需信用卡</li>
-          </ul>
-          <a class="btn btn-primary" href="https://www.chat-keeper.com" target="_blank" rel="noopener">了解镜像服务 →</a>
-        </div>
-        <div class="card plan">
-          <div class="plan-head">
-            <div class="plan-icon">🔌</div>
-            <div>
+
+          <div class="plan-preview card">
+            <div class="plan-preview-head">
+              <div class="plan-preview-icon">🔌</div>
               <span class="tag tag-purple">面向开发者</span>
-              <h3>API 套餐</h3>
+            </div>
+            <h3>API 接口服务</h3>
+            <p>标准 OpenAI 兼容接口，快速对接自有应用与工作流，按官方原价计费。</p>
+            <ul class="plan-preview-points">
+              <li><strong>Chat 接口</strong>：对话 / 文本生成 / 工具调用</li>
+              <li><strong>Image 接口</strong>：图像生成与编辑（独立计费）</li>
+              <li>两类接口对应不同的 API Key，不可混用</li>
+              <li>按官方原价计费，单价可查各厂商官网</li>
+            </ul>
+            <a class="plan-preview-link" href="https://www.chat-keeper.com" target="_blank" rel="noopener">了解 API 服务 →</a>
+          </div>
+        </div>
+
+        <p class="price-note">
+          💰 具体价格请前往购买渠道查看：<a href="https://shop230301068.taobao.com/category.htm" target="_blank" rel="noopener">淘宝店铺</a> · <a href="https://wyp.cn/shop/chatkeeper" target="_blank" rel="noopener">备用购买渠道</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 应用场景 -->
+    <section class="section section-alt" id="usecases">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">应用场景</span>
+          <h2>为不同角色提供专业支持</h2>
+          <p>无论是日常问答、内容创作还是自有应用接入，都能找到合适的使用方式。</p>
+        </div>
+
+        <div class="use-cases">
+          <div class="use-case card">
+            <div class="use-case-icon">💼</div>
+            <div>
+              <h3>个人用户</h3>
+              <p>日常问答、写作润色与学习研究，打开网页就能对话，无需 API Key、无需信用卡。</p>
             </div>
           </div>
-          <ul class="plan-list">
-            <li><strong>Chat 接口</strong>：对话 / 文本生成 / 工具调用</li>
-            <li><strong>Image 接口</strong>：图像生成与编辑（独立计费）</li>
-            <li>两类接口对应不同的 API Key，不可混用</li>
-            <li>按官方原价计费，单价可查各厂商官网</li>
-          </ul>
-          <a class="btn btn-primary" href="https://www.chat-keeper.com" target="_blank" rel="noopener">了解 API 服务 →</a>
+          <div class="use-case card">
+            <div class="use-case-icon">🎨</div>
+            <div>
+              <h3>内容创作</h3>
+              <p>用 Claude 完成脚本、文案与多语种内容生成，让 AI 陪你走完从灵感到成品的全过程。</p>
+            </div>
+          </div>
+          <div class="use-case card">
+            <div class="use-case-icon">🧑‍💻</div>
+            <div>
+              <h3>开发者</h3>
+              <p>通过标准 API 接入自有应用与工作流，Chat 与 Image 接口按需组合，按量计费。</p>
+            </div>
+          </div>
         </div>
       </div>
-      <p class="price-note">💰 具体价格请前往购买渠道查看：<a href="https://shop230301068.taobao.com/category.htm" target="_blank" rel="noopener">淘宝店铺</a> · <a href="https://wyp.cn/shop/chatkeeper" target="_blank" rel="noopener">备用购买渠道</a></p>
-    </div>
-  </section>
+    </section>
 
-  <!-- 快速开始 -->
-  <section class="section" id="start">
-    <div class="container">
-      <div class="section-head">
-        <span class="tag">快速开始</span>
-        <h2>三步开始使用</h2>
-      </div>
-      <div class="grid grid-3 steps">
-        <div class="card step">
-          <div class="step-num">1</div>
-          <h3>注册账号</h3>
-          <p>打开 <a href="https://www.chat-keeper.com" target="_blank" rel="noopener">www.chat-keeper.com</a>，邮箱注册即可。</p>
+    <!-- 能力展示 -->
+    <section class="section" id="preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">能力展示</span>
+          <h2>不只是聊天，还能真的把活干完</h2>
+          <p>背后是 Claude Code 级的 Agent 能力：拆任务、调工具、写文件、跑测试，全程可视化。</p>
         </div>
-        <div class="card step">
-          <div class="step-num">2</div>
-          <h3>开通套餐</h3>
-          <p>在个人中心购买或兑换套餐额度。</p>
-        </div>
-        <div class="card step">
-          <div class="step-num">3</div>
-          <h3>开始使用</h3>
-          <p>登录后在个人中心点「<strong>开始聊天</strong>」即可进入网页端；开发者同样在个人中心创建 API Key。</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="section section-alt" id="faq">
-    <div class="container container-narrow">
-      <div class="section-head">
-        <span class="tag">常见问题</span>
-        <h2>你可能想问</h2>
+        <div class="shots">
+          <figure class="shot">
+            <img src="assets/hero.png" alt="ChatKeeper 对话界面预览" loading="lazy" />
+            <figcaption>对话体验 — 与 Claude 官网一致的界面与操作习惯</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="assets/agent.png" alt="Claude Code 级 Agent 能力展示" loading="lazy" />
+            <figcaption>Agent 能力 — 拆解任务、调用工具、产出结果</figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="faq">
-        <details class="faq-item">
-          <summary>需要科学上网吗？</summary>
-          <p>不需要。ChatKeeper 面向国内网络环境优化，浏览器直连即可使用。</p>
-        </details>
-        <details class="faq-item">
-          <summary>体验和 Claude 官网一样吗？</summary>
-          <p>网页端为 1:1 还原 Claude 官网体验的镜像，功能与使用习惯保持一致，并持续跟进官方更新。</p>
-        </details>
-        <details class="faq-item">
-          <summary>支持哪些模型？</summary>
-          <p>覆盖 Claude 全系模型（Opus / Sonnet / Haiku），API 套餐另提供 Gemini / OpenAI 等主流模型接口。</p>
-        </details>
-        <details class="faq-item">
-          <summary>额度是怎么算的？</summary>
-          <p>按 Token 使用量计费，采用额度制，不受官方订阅 5 小时窗口限制。具体价格以淘宝店铺为准。</p>
-        </details>
-        <details class="faq-item">
-          <summary>对话内容会被用来训练吗？</summary>
-          <p>不会。对话内容不用于模型训练，传输全程加密。</p>
-        </details>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="cta-band">
-    <div class="container">
-      <h2>现在就开始使用 Claude</h2>
-      <p>注册即用，国内直连，按需付费。</p>
-      <a class="btn btn-light btn-lg" href="https://www.chat-keeper.com" target="_blank" rel="noopener">免费注册 →</a>
-    </div>
-  </section>
+    <!-- 核心能力 -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">核心能力</span>
+          <h2>为稳定、顺手、天天用而设计</h2>
+          <p>无论你是内容创作者、开发者还是企业团队，都能开箱即用。</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card card">
+            <div class="feature-icon">🪞</div>
+            <h3>1:1 网页体验</h3>
+            <p>与 Claude 官网一致的界面与使用习惯，上手零成本。</p>
+          </div>
+          <div class="feature-card card">
+            <div class="feature-icon">🌍</div>
+            <h3>国内直连</h3>
+            <p>无需科学上网，浏览器直接打开，稳定低延迟。</p>
+          </div>
+          <div class="feature-card card">
+            <div class="feature-icon">⏱️</div>
+            <h3>额度制计费</h3>
+            <p>按额度使用，不受官方订阅 5 小时窗口限制。</p>
+          </div>
+          <div class="feature-card card">
+            <div class="feature-icon">🤖</div>
+            <h3>全系模型</h3>
+            <p>覆盖 Claude Opus / Sonnet / Haiku，持续同步最新版本。</p>
+          </div>
+          <div class="feature-card card">
+            <div class="feature-icon">🔌</div>
+            <h3>标准 API</h3>
+            <p>OpenAI 兼容接口，快速对接自有应用与工作流。</p>
+          </div>
+          <div class="feature-card card">
+            <div class="feature-icon">🔒</div>
+            <h3>隐私保障</h3>
+            <p>对话内容不用于训练，传输全程加密。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 快速开始 -->
+    <section class="section" id="start">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">快速开始</span>
+          <h2>三步开始使用</h2>
+          <p>注册、开通、开始聊天，全程不需要额外配置。</p>
+        </div>
+
+        <div class="steps">
+          <div class="step card">
+            <div class="step-num">01</div>
+            <h3>注册账号</h3>
+            <p>打开 <a href="https://www.chat-keeper.com" target="_blank" rel="noopener">www.chat-keeper.com</a>，邮箱注册即可。</p>
+          </div>
+          <div class="step card">
+            <div class="step-num">02</div>
+            <h3>开通套餐</h3>
+            <p>在个人中心购买或兑换套餐额度。</p>
+          </div>
+          <div class="step card">
+            <div class="step-num">03</div>
+            <h3>开始使用</h3>
+            <p>登录后点「<strong>开始聊天</strong>」进入网页端；开发者同样在个人中心创建 API Key。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag">常见问题</span>
+          <h2>你可能想问</h2>
+        </div>
+
+        <div class="faq">
+          <details class="faq-item">
+            <summary>需要科学上网吗？</summary>
+            <p>不需要。ChatKeeper 面向国内网络环境优化，浏览器直连即可使用。</p>
+          </details>
+          <details class="faq-item">
+            <summary>体验和 Claude 官网一样吗？</summary>
+            <p>网页端为 1:1 还原 Claude 官网体验的镜像，功能与使用习惯保持一致，并持续跟进官方更新。</p>
+          </details>
+          <details class="faq-item">
+            <summary>支持哪些模型？</summary>
+            <p>覆盖 Claude 全系模型（Opus / Sonnet / Haiku），API 套餐另提供 Gemini / OpenAI 等主流模型接口。</p>
+          </details>
+          <details class="faq-item">
+            <summary>额度是怎么算的？</summary>
+            <p>按 Token 使用量计费，采用额度制，不受官方订阅 5 小时窗口限制。具体价格以淘宝店铺为准。</p>
+          </details>
+          <details class="faq-item">
+            <summary>对话内容会被用来训练吗？</summary>
+            <p>不会。对话内容不用于模型训练，传输全程加密。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="cta-block">
+          <h2>现在就开始使用 Claude</h2>
+          <p>注册即用，国内直连，<strong>按需付费</strong>，无 5 小时额度限制。</p>
+          <a class="btn btn-primary btn-lg" href="https://www.chat-keeper.com" target="_blank" rel="noopener">免费注册 →</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- 页脚 -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/logo.svg" alt="ChatKeeper Logo" class="brand-logo" />
-        <span>ChatKeeper</span>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">chat-keeper</span>
+          <p>专注 Claude 全系大模型，提供 Claude 镜像与 API 套餐两种使用方式。一个账号，畅享 Claude 顶尖模型。</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>产品</h4>
+          <ul>
+            <li><a href="#plans">套餐介绍</a></li>
+            <li><a href="#preview">能力展示</a></li>
+            <li><a href="#features">核心能力</a></li>
+            <li><a href="#start">快速开始</a></li>
+            <li><a href="#faq">常见问题</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>账户</h4>
+          <ul>
+            <li><a href="https://www.chat-keeper.com" target="_blank" rel="noopener">注册</a></li>
+            <li><a href="https://www.chat-keeper.com" target="_blank" rel="noopener">登录</a></li>
+            <li><a href="https://www.chat-keeper.com" target="_blank" rel="noopener">个人中心</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>购买</h4>
+          <ul>
+            <li><a href="https://shop230301068.taobao.com/category.htm" target="_blank" rel="noopener">淘宝店铺</a></li>
+            <li><a href="https://wyp.cn/shop/chatkeeper" target="_blank" rel="noopener">备用渠道</a></li>
+            <li><a href="https://github.com/h563k/chat-keeper" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="https://www.chat-keeper.com" target="_blank" rel="noopener">注册 / 个人中心</a>
-        <a href="https://github.com/h563k/chat-keeper" target="_blank" rel="noopener">GitHub</a>
+
+      <div class="footer-bottom">
+        <p class="disclaimer">免责声明：本项目为第三方服务，与 Anthropic 官方无隶属关系。Claude 及相关商标归 Anthropic 所有。</p>
+        <div class="footer-bottom-row">
+          <p class="copyright">© <span id="year"></span> ChatKeeper. All rights reserved.</p>
+          <p class="muted">Designed for AI Practitioners</p>
+        </div>
       </div>
-      <p class="disclaimer">
-        免责声明：本项目为第三方服务，与 Anthropic 官方无隶属关系。Claude 及相关商标归 Anthropic 所有。
-      </p>
-      <p class="copyright">© <span id="year"></span> ChatKeeper. All rights reserved.</p>
     </div>
   </footer>
 
